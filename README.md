@@ -33,7 +33,7 @@ docker run --detach \
 			-v "/my_script_folder:/scripts:ro" \
 			-v "/my_conf_folder:/conf:ro" \
 			-p 80:10080 -p 443:10443 \
-			khirin/nginx_proxy`
+			khirin/nginx-proxy`
 ```
 
 ##### • Build
@@ -43,17 +43,17 @@ docker build --no-cache=true \
 			--build-arg UID="2000" \
 			--build-arg GID="2000" \
 			--build-arg PORT="10080 10443" \
-			-t repo/nginx_proxy .
+			-t repo/nginx-proxy .
 ```
 
 ##### • Create
 ```shell
-docker create --hostname=nginxproxy \
+docker create --hostname=nginx-proxy \
 			-v "/my_script_folder:/scripts:ro" \
 			-v "/my_conf_folder:/conf:ro" \
 			-p 80:10080 -p 443:10443 \
-			--name nginxproxy \
-			repo/nginxproxy
+			--name nginx-proxy \
+			repo/nginx-proxy
 ```
 
 ### Author
